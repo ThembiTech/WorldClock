@@ -10,30 +10,29 @@
         <title>World Clock</title>
 </head>
 <body>
+   <div class="container">
     <h1>World Clock</h1>
-<select id="city" >
-    <option value="">Select a city</option>
+<select id="city">
+    <option value="">Select a city...</option>
     <option value="Europe/Paris">Paris 🇫🇷</option>
     <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
     <option value="Australia/Sydney">Sydney 🇦🇺</option>
     <option value="Indian/Maldives">Maldives 🏝</option>
 </select>
 
-<script>
-    function showDate(event) {
-         if (event.target.value.length > 0) {
-            let currentTime = moment()
-                .tz(event.target.value)
-                .format("dddd, MMMM D, YYYY h:mm A");
+</div>
 
-            alert(`It is ${currentTime} in ${event.target.value}`);
-        }
+<div class="city">
+    <h2>Cape Town</h2>
+    <div class="date">August 15th 2022</div>
+    <div class="time">1:48:15</div>
 
+    <h2>East London</h2>
+    <div class="date">August 18th 2022</div>
+    <div class="time">1:48:15</div>
 
-    }
-    let selectElement = document.querySelector('#city');
-    selectElement.addEventListener("change",showDate);
-</script>
+</div>
+
 
 <footer>
     This project is coded by <a href="https://github.com/ThembiTech" target="_blank">Thembisa Skosana</a> <a href="https://github.com/ThembiTech/WorldClock" target="_blank">github</a> and hosted on <a href="https://moonlit-ganache-c66d35.netlify.app/" target="_blank" >netlify</a>
