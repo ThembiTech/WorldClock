@@ -1,7 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 h1 {
   text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  animation: slideUp 1s ease-out forwards;
 }
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  color: #333;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+select:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px 0;
+  border-bottom: 1px dashed #ddd;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+.city:last-child {
+  border-bottom: none;
+}
+
+.city h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.city h2:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.city .date {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+.time {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.time small {
+  font-size: 1.5rem;
+  color: #666;
+  vertical-align: super;
+}
+
 footer {
   text-align: center;
   margin-top: 40px;
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .time {
+    font-size: 1.8rem;
+  }
+
+  .city h2 {
+    font-size: 1.1rem;
+  }
+
+  .city .date {
+    font-size: 0.9rem;
+  }
 }
